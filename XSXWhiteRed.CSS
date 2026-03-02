@@ -1,0 +1,52 @@
+.controller.custom {
+  width: 850px;
+  height: 425px;
+  background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_Controller%20Body.svg') no-repeat center;
+  background-size: contain;
+}
+
+/* Universal pressed effect (since no -pressed SVGs) */
+.custom button.pressed,
+.custom .a.pressed, .custom .b.pressed, .custom .x.pressed, .custom .y.pressed,
+.custom .select.pressed, .custom .start.pressed, .custom .logo.pressed,
+.custom .lb.pressed, .custom .rb.pressed {
+  transform: scale(0.95) translateY(3px);
+  filter: brightness(0.85) drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  transition: all 0.1s ease;
+}
+
+/* Face Buttons - Bigger sizes */
+.custom .a { position: absolute; top: 260px; left: 580px; width: 90px; height: 90px; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_A%20Button.svg') center/contain no-repeat; background-size: contain; }
+.custom .b { top: 210px; left: 650px; width: 90px; height: 90px; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_B%20Button.svg') center/contain no-repeat; background-size: contain; }
+.custom .x { top: 260px; left: 530px; width: 90px; height: 90px; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_X%20Button.svg') center/contain no-repeat; background-size: contain; }
+.custom .y { top: 190px; left: 580px; width: 90px; height: 90px; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_Y%20Button.svg') center/contain no-repeat; background-size: contain; }
+
+/* Bumpers - Placeholder (gray rects) until you export separate LB.svg / RB.svg */
+.custom .lb { top: 85px; left: 160px; width: 155px; height: 40px; background: linear-gradient(180deg, #666 0%, #444 100%); border-radius: 12px 12px 4px 4px; }
+.custom .rb { top: 85px; left: 535px; width: 155px; height: 40px; background: linear-gradient(180deg, #666 0%, #444 100%); border-radius: 12px 12px 4px 4px; }
+/* TODO: Replace with real images: e.g. .lb { background: url(LB.svg) contain; } */
+
+/* Triggers - Bars scale via JS */
+.custom .lt { top: 28px; left: 170px; width: 24px; height: 80px; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_Left%20Trigger.svg') center/contain no-repeat; background-size: 100% 100%; }
+.custom .rt { top: 28px; left: 655px; width: 24px; height: 80px; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_Right%20Trigger.svg') center/contain no-repeat; background-size: 100% 100%; }
+
+/* Sticks - Gates from your SVGs, knobs placeholder (moving via JS) */
+.custom .left-stick { top: 230px; left: 170px; width: 120px; height: 120px; }
+.custom .left-stick .gate { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_Left%20Stick.svg') center/contain no-repeat; background-size: contain; }
+.custom .left-stick .knob { position: absolute; top: 30px; left: 30px; width: 60px; height: 60px; background: radial-gradient(circle at 30% 30%, #555 0%, #333 60%, #222 100%); border: 3px solid #666; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+.custom .right-stick { top: 230px; left: 560px; width: 120px; height: 120px; }
+.custom .right-stick .gate { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_Right%20Stick.svg') center/contain no-repeat; background-size: contain; }
+.custom .right-stick .knob { position: absolute; top: 30px; left: 30px; width: 60px; height: 60px; background: radial-gradient(circle at 30% 30%, #555 0%, #333 60%, #222 100%); border: 3px solid #666; border-radius: 50%; box-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+/* TODO: Export LS-Knob.svg / RS-Knob.svg (hide gate path/group in Inkscape), replace knob bg */
+
+/* D-Pad - Whole image, animates on any direction press */
+.custom .dpad { top: 232px; left: 200px; width: 75px; height: 75px; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_D-PAD.svg') center/contain no-repeat; background-size: contain; }
+/* Hide sub-elements, animate whole on press (:has supported in modern OBS/Chromium) */
+.custom .dpad > * { display: none !important; }
+.custom .dpad:has(> .pressed) { filter: brightness(0.8); transform: scale(0.95); transition: all 0.1s ease; }
+
+/* Menu Buttons - Share (select), Menu (start), Guide (logo) */
+.custom .select { top: 160px; left: 300px; width: 52px; height: 52px; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_Share%20Button.svg') center/contain no-repeat; background-size: contain; }
+.custom .start { top: 160px; left: 500px; width: 52px; height: 52px; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_Menu%20Button.svg') center/contain no-repeat; background-size: contain; }
+.custom .logo { top: 172px; left: 385px; width: 75px; height: 75px; background: url('https://raw.githubusercontent.com/T3Kgamer/T3K-Controller-Skin/main/SVG/XSX-_Xbox%20Guide%20Button.svg') center/contain no-repeat; background-size: contain; }
+/* Note: XSX-_View Button.svg unused (perhaps old layer - delete or map if needed) */
